@@ -29,6 +29,12 @@ function Hero(){
             {displayedText}
             <span style={{ position: "absolute" }}>{textBar}</span>
             </h1>
+            <p>
+                Recent Computer Science graduate with a passion for algorithms and graph theory.  
+                I enjoy solving challenging problems and building elegant and efficient solutions.  
+                In my free time, I enjoy playing video games and spending time with my cat,  
+                they help keep me motivated and inspired during long coding sessions.
+            </p>
         </section>
     )
 }

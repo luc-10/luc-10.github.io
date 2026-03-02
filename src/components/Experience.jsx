@@ -29,7 +29,7 @@ function Experience(){
             {experiences.map((exp, _) => (
                 <div>
                     <h3>{exp.title}</h3>
-                    <h3>{exp.period}</h3>
+                    <h3>{exp.period} {exp.location}</h3>
                     <span>{exp.organization}</span>
                     {exp.details.map((det, _) => (
                         <p>{det}</p>

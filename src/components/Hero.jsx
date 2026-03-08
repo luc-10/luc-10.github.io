@@ -1,40 +1,11 @@
-import React, {useState, useEffect} from 'react'
-
 function Hero(){
-    const text = "Hi, I'm Luca Pastore"
-    const [displayedText, setDisplayedText] = useState("")
-    const [index, setIndex] = useState(0)
-    const bar = "|"
-    const [textBar, setTextBar] = useState("")
-    useEffect(() => {
-        if (index < text.length) {
-            const timeout = setTimeout(() => {
-                setDisplayedText((prev) => prev+text[index])
-                setIndex(index+1)
-
-            }, 50+Math.floor(Math.random()*100))
-            return () => clearTimeout(timeout)
-        }
-    }, [index, text])
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setTextBar((bar) => bar==="|" ? "" : "|")
-        }, 750)
-        return () => clearTimeout(timeout)
-    }, [bar, textBar])
     return (
-        <section className="text-left">
-            <h1 style={{ position: "relative", display: "inline-block" }}>
-            {displayedText}
-            <span style={{ position: "absolute" }}>{textBar}</span>
-            </h1>
-            <p>
-                Recent Computer Science graduate with a passion for algorithms and graph theory.  
-                I enjoy solving challenging problems and building elegant and efficient solutions.  
-                In my free time, I enjoy playing video games and spending time with my cat,  
-                they help keep me motivated and inspired during long coding sessions.
-            </p>
+        <section className="items-center min-h-screen flex flex-col justify-center px-6 md:px-16">
+            <p className="text-gray-500 text-sm tracking-widest uppercase mb-3">Computer Science Graduate</p>
+            <h1 className="text-5xl font-times-new-roman mb-6 relative uppercase">Luca Pastore</h1>
+            <p className="text-lg text-gray max-w-2xl leading-relaxed mb-4 ">I've always been drawn to problems that don't have an obvious solution. That instinct pushed me toward Computer Science, where I discovered a passion for algorithms and the elegance of well-structured code. Along the way I studied abroad in Norway and I'm currently volunteering in Romania.</p>
+            <p className="italic text-gray-500 max-w-2xl mb-8">Write something cool here, preferably about this length</p>
+            <a href="#projects" className="text-sm tracking-widest uppercase transition-colors w-fit">View my work ↓</a>
         </section>
     )
 }

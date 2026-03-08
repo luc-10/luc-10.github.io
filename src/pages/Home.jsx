@@ -1,6 +1,7 @@
 import Experience from "../components/Experience"
 import Hero from "../components/Hero"
 import Education from "../components/Education"
+import Projects from "../components/Projects"
 
 function Home(){
     return (
@@ -8,6 +9,7 @@ function Home(){
             <Hero/>
             <Experience/>
             <Education/>
+            <Projects/>
         </div>
     )
 }

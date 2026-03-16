@@ -28,31 +28,33 @@ function Experience(){
     const [hoveredIndex, setHoveredIndex] = useState(null)
 
     return (
-        <section id="experience" className="px-6 md:px-16 py-12">
-            <h2 className = "text-2xl font-bold mb-2 uppercase">Experience</h2>
-            <hr className = "border-black mb-6"></hr>
-            {experiences.map((exp, index) => (
-                <div key = {index} className = "mb-10 border-l-2 pl-6 color-black"
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                >
-                    <div className = "flex justify-between items-start">
-                        <span className = "text-xl font-bold"> {exp.title}</span>
-                        <span className = "text-gray-400 text-lg">{exp.period}</span>
-                    </div>
-                    <div className = "flex justify-between items-start">
-                        <span className = "text-lg">{exp.organization}</span>
-                        <span className = "text-gray-400 text-lg">{exp.location}</span>
-                    </div>
-                    <div className={`overflow-hidden transition-all duration-1000 ${hoveredIndex === index ? 'max-h-32 mt-3' : 'max-h-0'}`}>
-                        <div className = "mb-3"></div>
-                        {exp.details.map((det, i) => (
-                            <p className = "text-lg leading-relaxed">• {det}</p>
-                        ))}
-                    </div>
+        <div id="experience" className="relative h-[1500px] min-w-1/2 p-8">
+            
+            <div className="absolute left-8 top-0 h-[1500px] w-[2px] bg-white"></div>
+
+
+            <div className="absolute left-8 top-[60px] h-[55px] w-8 group flex justify-start">
+                <div className="w-[2px] h-full bg-green-500"></div>
+                <div className="absolute right-10 top-0 hidden group-hover:block bg-black text-white text-sm p-3 rounded shadow-lg w-48">
+                    COSI<br/>
+
                 </div>
-            ))}
-        </section>
+
+            </div>
+            <div className="absolute left-8 top-[150px] h-[25px] w-8 group flex justify-start">
+                <div className="w-[2px] h-full bg-red-500"></div>
+                <div className="absolute right-10 top-0 hidden group-hover:block bg-black text-white text-sm p-3 rounded shadow-lg w-48">
+                    Internship<br/>
+
+                </div>
+
+            </div>
+            
+        
+
+        </div>
+
+        
     )
 }
 

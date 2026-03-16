@@ -19,28 +19,40 @@ function Education(){
             school: "I.I.S. Principessa Maria Pia",
             location: "Taranto, Italy",
             period: "Sep 2016 • Jun 2021",
-            finalGrade: "Final grade: 100 / 100"
+            finalGrade: "Final grade: 100 / 100",
+            image: "../assets/mariaPia.pngb"
         }
     ]
 
     return (
-        <section id="education" className="px-6 md:px-16 py-12">
-            <h2 className = "text-2xl font-bold mb-2 uppercase">Education</h2>
-            <hr className = "border-black mb-6"></hr>
-            {educations.map((edu, index) => (
-                <div key = {index} className = "mb-10 border-l-2 pl-6 color-black">
-                    <div className = "flex justify-between items-start">
-                        <span className = "text-xl font-bold"> {edu.title}</span>
-                        <span className = "text-gray-400 text-lg">{edu.period}</span>
-                    </div>
-                    <div className = "flex justify-between items-start">
-                        <span className = "text-lg">{edu.school}</span>
-                        <span className = "text-gray-400 text-lg">{edu.location}</span>
-                    </div>
-                    <span className = "text-lg">{edu.finalGrade}</span>
+        <div id="education" className="relative h-[1500px] w-1/2 p-8">
+
+            {/*full line*/}
+            <div className="absolute right-8 top-0 h-[1500px] w-[2px] bg-white"></div>
+            {/*degree*/}
+            <div className="absolute right-8 top-[135px] h-[380px] w-8 group flex justify-end">
+                <div className="w-[2px] h-full bg-red-500"></div>
+                <div className="absolute right-10 top-0 hidden group-hover:block bg-black text-white text-sm p-3 rounded shadow-lg w-48">
+                    Bachelor's Degree<br/>
+                    Computer Science<br/>
+                    Sep 2022 - Nov 2025
                 </div>
-            ))}
-        </section>
+
+            </div>
+            
+            
+            {/*erasmus*/}
+            <div className="absolute right-8 top-[190px] h-[50px] w-8 group flex justify-end">
+                <div className="w-[2px] h-full bg-blue-500"></div>
+
+                    <div className="absolute right-10 top-0 hidden group-hover:block bg-black text-white text-sm p-3 rounded shadow-lg w-48">
+                    Erasmus<br/>
+                </div>
+            </div>
+
+            {/*hs*/}
+            <div className="absolute right-8 top-[670px] h-[570px] w-[2px] bg-green-500"></div>
+        </div>
     )
 }
 

@@ -5,10 +5,12 @@ import TimeLines from "../components/TimeLines"
 
 function Home(){
     return (
-        <div class="bg-[#240046]">
+        <div className="bg-[#240046]">
             <NavBar/>
             <Hero/>
-            <TimeLines/>
+            <div className="mt-[10%]">
+                <TimeLines/>
+            </div>
             <Projects/>
         </div>
     )

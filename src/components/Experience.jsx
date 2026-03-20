@@ -28,9 +28,9 @@ function Experience(){
     const [hoveredIndex, setHoveredIndex] = useState(null)
 
     return (
-        <div id="experience" className="relative h-[1500px] min-w-1/2 p-8">
+        <div id="experience" className="relative h-[750px] min-w-1/2 p-8">
             
-            <div className="absolute left-8 top-0 h-[1500px] w-[2px] bg-white"></div>
+            <div className="absolute left-8 top-0 h-[750px] w-[2px] bg-white"></div>
 
 
             <div className="absolute left-8 top-[60px] h-[55px] w-8 group flex justify-start">

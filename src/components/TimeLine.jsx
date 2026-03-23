@@ -1,4 +1,6 @@
-function TimeLine({ information, hoveredCard }){
+import { clamp } from "framer-motion"
+
+function TimeLine({ information, hoveredCard, colors }){
 
     const LINE_HEIGHT = window.innerHeight * 2/3
 
@@ -17,8 +19,8 @@ function TimeLine({ information, hoveredCard }){
         endDate: info.endDate > maxDate ? maxDate : info.endDate,
         ongoing: info.endDate > maxDate
     }))
-    const ongoingInfo = clampedInfo.find(info => info.ongoing)
-
+    const ongoingIndex = clampedInfo.findIndex(info => info.ongoing)
+    const ongoingInfo = ongoingIndex !== -1 ? clampedInfo[ongoingIndex] : null
 
     const totalMonths = (maxDate-minDate) / (1000 * 60 * 60 * 24 * 30)
     const MONTH_PX = LINE_HEIGHT / totalMonths
@@ -49,8 +51,8 @@ function TimeLine({ information, hoveredCard }){
 
                 <div className="w-full h-[100px] duration-300"
                     style={{ 
-                        backgroundImage: `linear-gradient(to bottom, transparent, ${ongoingInfo ? ongoingInfo.color : "white"})`,
-                        width: `${ongoingInfo && hoveredCard===ongoingInfo.title ? "8px" : "2px"}`
+                        backgroundImage: `linear-gradient(to bottom, transparent, ${ongoingInfo ? colors[ongoingIndex] : "white"})`,
+                        width: `${ongoingInfo ? hoveredCard===ongoingInfo.title ? "16px" : "4px" : "2px"}`
 
                     }}
                 ></div>
@@ -68,17 +70,17 @@ function TimeLine({ information, hoveredCard }){
                     return (
                         <div key = {i} className="absolute duration-300"
                         style={{
-                            backgroundColor: info.color,
+                            backgroundColor: colors[i],
                             top: endPx+((window.innerHeight-LINE_HEIGHT)/2)+"px", 
                             height: (startPx-endPx)+"px",
-                            width: `${hoveredCard===info.title ? "8px" : "2px"}`
+                            width: `${hoveredCard===info.title ? "16px" : "4px"}`
                             }}>
 
                         </div>
                     )
                 })}
             </div>
-            <div className="absolute flex items-center text-white -translate-y-1/2 whitespace-nowrap translate-x-[8px] text-xl"
+            <div className="absolute flex items-center text-white -translate-y-1/2 whitespace-nowrap translate-x-[12px] text-xl"
                 style={{
                     top: toPx(maxDate)+((window.innerHeight - LINE_HEIGHT)/2)+"px",
 
@@ -88,7 +90,7 @@ function TimeLine({ information, hoveredCard }){
             </div>
 
                 {years.map(year => (
-                    <div key={year.year} className="absolute flex items-center text-white -translate-y-1/2 translate-x-[8px] whitespace-nowrap text-xl"
+                    <div key={year.year} className="absolute flex items-center text-white -translate-y-1/2 translate-x-[12px] whitespace-nowrap text-xl"
                         style={{
                             top: year.px+((window.innerHeight-LINE_HEIGHT)/2)+"px",
 

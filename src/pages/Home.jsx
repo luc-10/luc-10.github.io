@@ -7,6 +7,7 @@ import Cards from "../components/Cards"
 import unitnLogo from "../assets/unitnLogo.jpg"
 import ntnuLogo from "../assets/ntnuLogo.png"
 import cosiLogo from "../assets/cosiLogo.png"
+import { AnimatePresence } from "framer-motion"
 
 
 function Home(){
@@ -69,7 +70,7 @@ function Home(){
         {
             title: "Fragile Potions",
             organization: "",
-            location: "",
+            location: "C# | Godot | Git",
             startDate: null,
             endDate: null,
             details: [
@@ -79,7 +80,7 @@ function Home(){
         {
             title: "PokerHeim",
             organization: "",
-            location: "",
+            location: "Java | Python | libGDX | Firestore | Git",
             startDate: null,
             endDate: null,
             details: [
@@ -89,11 +90,41 @@ function Home(){
         {
             title: "Distributed Elevator system",
             organization: "",
-            location: "",
+            location: "Golang | UDP | Git",
             startDate: null,
             endDate: null,
             details: [
                 "Fault-tolerant real-time distributed system where three elevators coordinate via peer-to-peer communication. Implements failure detection and takeover on node or network faults, with error handling for motor stalls and door malfunctions"
+            ]
+        },
+        {
+            title: "Advent of code 2025",
+            organization: "",
+            location: "Golang | Git",
+            startDate: null,
+            endDate: null,
+            details: [
+                "Aoc"
+            ]
+        },
+        {
+            title: "Advent of code 2024",
+            organization: "",
+            location: "Typescript | Git",
+            startDate: null,
+            endDate: null,
+            details: [
+                "AoC"
+            ]
+        },
+        {
+            title: "Brainfuck Interpreter",
+            organization: "",
+            location: "C | Git",
+            startDate: null,
+            endDate: null,
+            details: [
+                "bf"
             ]
         }
     ]
@@ -101,8 +132,8 @@ function Home(){
 
     const [selectedItem, setSelectedItem] = useState(null)
     const baseColors = [
-        "#00B4D8", "#FF6B35", "#7B2FFF", "#00C896", "#FFB800", "#FF2D78",
-        "#FF3366", "#00E5FF", "#AAFF00", "#FF6F00", "#9D00FF", "#00FFAB"
+        
+        "#FF3366", "#FF9933", "#CCFF33", "#33FF33", "#33FFCC", "#3399FF", "#6633FF", "#FF33FF"
     ]
     const [colors, setColors] = useState([...baseColors])
 
@@ -116,10 +147,12 @@ function Home(){
         <div className="relative h-screen">
             <VerticalBar selectedItem={selectedItem} setSelectedItem={setSelectedItem} colors={colors}/>
             <div className="absolute flex justify-center items-center top-0 w-full h-full pointer-events-none">
-                {selectedItem === "about" && <Hero/>}
-                {selectedItem === "experience" && <InfoSection information={experiences} colors={colors}/>}
-                {selectedItem === "education" && <InfoSection information={educations} colors={colors}/>}
-                {selectedItem === "projects" && <Cards information={projects} colors={colors}/>}
+                <AnimatePresence>
+                    {selectedItem === "about" && <Hero colors={colors}/>}
+                    {selectedItem === "experience" && <InfoSection information={experiences} colors={colors}/>}
+                    {selectedItem === "education" && <InfoSection information={educations} colors={colors}/>}
+                    {selectedItem === "projects" && <Cards information={projects} colors={colors}/>}
+                </AnimatePresence>
             </div>
         </div>
     )

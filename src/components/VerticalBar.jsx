@@ -30,7 +30,7 @@ function VerticalBar({ selectedItem, setSelectedItem, colors}){
             transition={{ duration: 0.75, ease: [0.75, 0, 0.25, 1] }}
             >
 
-            <Item onClick={() => setSelectedItem("about")} colors={colors}>Luca Pastore</Item>
+            <Item onClick={() => setSelectedItem("about")} colors={colors}>About me</Item>
             <Item onClick={() => setSelectedItem("experience")} colors={colors}>Experience</Item>
             <Item onClick={() => setSelectedItem("education")} colors={colors}>Education</Item>
             <Item onClick={() => setSelectedItem("projects")} colors={colors}>Projects</Item>

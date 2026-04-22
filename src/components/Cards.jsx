@@ -8,7 +8,7 @@ function Cards({ information, setHoveredCard, colors }){
     const [expandedCard, setExpandedCard] = useState(null)
     
     return (
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4">
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4 overflow-y-auto max-h-[80vh]">
             {visibleInfo.map((info, i) => (
                 <Card 
                     key={info.title} 

@@ -1,25 +1,20 @@
-import TimeLine from "./TimeLine"
-import Cards from "./Cards"
-import { useState } from "react"
-import { motion } from "framer-motion"
+import Item from "./Item"
 
-function InfoSection({ information, colors }){
-
-    const [hoveredCard, setHoveredCard] = useState(null)
-
+function InfoSection({ information, title }){
+    
     return (
-        <div>
-            <motion.div
-                initial={{ opacity: 0, x:60 }}
-                animate={{ opacity: 1, x:0 }}
-                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut"}}
-                exit={{ opacity: 0.5, ease: "easeOut", x:60 }}
-            >
-                <TimeLine information={information} hoveredCard={hoveredCard} colors={colors}/>
-            </motion.div>
-            <Cards information={information} setHoveredCard={setHoveredCard} colors={colors}/>
+        <div id={title} className="mx-auto w-1/2 scroll-mt-48">
+            <div className="flex flex-col items-start my-48 items-stretch">
+                <h1 className="uppercase text-4xl font-semibold">{title}</h1>
+                <div className="">
+                    {information.map((info) => (
+                        <Item info={info}/>
+                    ))}
+                </div>
+                
+            </div>
         </div>
     )
 }
 
-export default InfoSection 
+export default InfoSection

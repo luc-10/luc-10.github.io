@@ -1,48 +1,30 @@
-import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { FaGithub } from "react-icons/fa"
+import { techIcons } from "../pages/Home"
 
-function Card({ info, setHoveredCard, expanded, onToggle, color}){
+function Card({ project }){
     return (
-            <div key={info.title} className="bg-[#333333] border-4 rounded-xl p-4 pointer-events-auto opacity-75 hover:opacity-90 duration-300"
-                style = {{ 
-                        width: window.innerWidth /4 + "px", 
-                        borderColor: color
-                }}
-
-                    onMouseDown={(e) => e.stopPropagation()}
-                    onMouseEnter={() => setHoveredCard(info.title)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    onClick={onToggle}
+        <div className="border-2 max-w-sm rounded-xl bg-[#292929] flex flex-col h-full p-4">
+            
+            <div className="flex justify-between items-center mb-2">
+                <h1 className="font-bold text-xl">{project.title}</h1>
+                <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-xl"
                 >
-                    <img src={info.image} className="p-4 mb-4 w-full"></img>
-                    <div className="px-4">
-                        <p className="font-bold text-xl">{info.title}</p>
-                        <div className="my-2">
-                            <a href="" target="_black">{info.organization}</a>
-                            <br/>
-                            <span className="text-gray-500 text-sm">{info.location}</span>
-                            {info.startDate !== null && <span className="text-gray-500 text-sm float-right">{info.startDate.toLocaleDateString()} • {info.endDate.toLocaleDateString()}</span>}
-                        </div>
-                        <motion.div className="overflow-hidden"
-                            animate={{ height: expanded ? "auto" : 0 }}
-                            initial={{ height: 0 }}
-                        >
-                        {info.details.map(detail => (
-                            <p>• {detail}</p>
-                        ))}
-                        </motion.div>
-                            <motion.div
-                                className="w-full flex justify-center"
-                                animate={{ rotate: expanded ? 180 : 0 }}
-                                transition={{ duration: 0.3 }}
+                    <FaGithub/>
+                </a>
+            </div>
 
-                            >
-                            <ChevronDown size={48} color={color}/>
-                            </motion.div>
+            <p className="flex-grow">
+                {project.details}
+            </p>
 
-                    </div>
-                </div>
+            <div className="flex justify-center mt-4 text-[#999999]">
+                {project.technologies.join(" | ")}
+            </div>
+        </div>
     )
 }
-
 export default Card

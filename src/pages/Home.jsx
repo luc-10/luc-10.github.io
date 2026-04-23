@@ -1,14 +1,24 @@
-import Hero from "../components/Hero"
-import VerticalBar from "../components/VerticalBar"
-import { useState, useEffect } from "react"
+
+import NavBar from "../components/NavBar"
+import About from "../components/About"
 import InfoSection from "../components/InfoSection"
-import Cards from "../components/Cards"
+import Projects from "../components/Projects"
 
-import unitnLogo from "../assets/unitnLogo.jpg"
-import ntnuLogo from "../assets/ntnuLogo.png"
-import cosiLogo from "../assets/cosiLogo.png"
-import { AnimatePresence } from "framer-motion"
+import { GoOriginal, GitOriginal, JavaOriginal, 
+    PythonOriginal, TypescriptOriginal, GodotOriginal, 
+    FirebaseOriginal, CsharpOriginal } from "devicons-react"
 
+
+export const techIcons = {
+    Golang: <GoOriginal />,
+    Git: <GitOriginal />,
+    Java: <JavaOriginal title="Java" />,
+    Python: <PythonOriginal title="Python" />,
+    Typescript: <TypescriptOriginal title="Typescript" />,
+    Godot: <GodotOriginal title="Godot" />,
+    Firebase: <FirebaseOriginal title="Firestore" />,
+    "C#": <CsharpOriginal title="C#" />,
+}
 
 function Home(){
 
@@ -19,7 +29,7 @@ function Home(){
             location: "Bucharest, Romania",
             startDate: new Date("2026-01-10"),
             endDate: new Date("2026-06-30"),
-            image: cosiLogo,
+            link: "https://cosiromania.com",
             details: [
                 "Designed and implemented monthly awareness campaigns on topics such as discrimination, tolerance, and youth opportunities.",
                 "Planned and organized intercultural events, engaging diverse community members.",
@@ -32,14 +42,13 @@ function Home(){
             location: "Trento, Italy",
             startDate: new Date("2025-08-01"),
             endDate: new Date("2025-10-10"),
-            image: unitnLogo,
+            link: "https://www.unitn.it/en",
             details: [
                 "Developed and improved heuristic algorithms for the Radiotherapy Scheduling Problem, modeled as a variation of the 1D Online Bin Packing Problem using Python.",
                 "Evaluated algorithmic performance and solution quality through experimental analysis."
             ]
         }
     ]
-
 
     const educations = [
         {
@@ -48,7 +57,7 @@ function Home(){
             location: "Trento, Italy",
             startDate: new Date("2022-09-13"),
             endDate: new Date("2025-11-17"),
-            image: unitnLogo,
+            link: "https://www.unitn.it/en",
             details: [
                 "Final grade: 110 Cum Laude / 110"
             ]
@@ -59,101 +68,27 @@ function Home(){
             location: "Trondheim, Norway",
             startDate: new Date("2025-01-06"),
             endDate: new Date("2025-06-06"),
-            image: ntnuLogo,
+            link: "https://www.ntnu.edu/",
             details: [
             ]
         },
 
     ]
 
-    const projects = [
-        {
-            title: "Fragile Potions",
-            organization: "",
-            location: "C# | Godot | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "Variant of the classic Sokoban puzzle game featuring group-based box movement and destructible crates after repeated collisions"
-            ]
-        },
-        {
-            title: "PokerHeim",
-            organization: "",
-            location: "Java | Python | libGDX | Firestore | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "Multiplayer real-time Texas Hold’em poker mobile game developed as a team-based Agile project"
-            ]
-        },
-        {
-            title: "Distributed Elevator system",
-            organization: "",
-            location: "Golang | UDP | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "Fault-tolerant real-time distributed system where three elevators coordinate via peer-to-peer communication. Implements failure detection and takeover on node or network faults, with error handling for motor stalls and door malfunctions"
-            ]
-        },
-        {
-            title: "Advent of code 2025",
-            organization: "",
-            location: "Golang | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "Aoc"
-            ]
-        },
-        {
-            title: "Advent of code 2024",
-            organization: "",
-            location: "Typescript | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "AoC"
-            ]
-        },
-        {
-            title: "Brainfuck Interpreter",
-            organization: "",
-            location: "C | Git",
-            startDate: null,
-            endDate: null,
-            details: [
-                "bf"
-            ]
-        }
-    ]
 
 
-    const [selectedItem, setSelectedItem] = useState(null)
     const baseColors = [
         
         "#FF3366", "#FF9933", "#CCFF33", "#33FF33", "#33FFCC", "#3399FF", "#6633FF", "#FF33FF"
     ]
-    const [colors, setColors] = useState([...baseColors])
-
-    useEffect(() => {
-        if (selectedItem === null) return
-        setColors([...baseColors].sort(() => Math.random() - 0.5))
-    }, [selectedItem])
-
 
     return (
-        <div className="relative h-screen">
-            <VerticalBar selectedItem={selectedItem} setSelectedItem={setSelectedItem} colors={colors}/>
-            <div className="absolute flex justify-center items-center top-0 w-full h-full pointer-events-none">
-                <AnimatePresence>
-                    {selectedItem === "about" && <Hero colors={colors}/>}
-                    {selectedItem === "experience" && <InfoSection information={experiences} colors={colors}/>}
-                    {selectedItem === "education" && <InfoSection information={educations} colors={colors}/>}
-                    {selectedItem === "projects" && <Cards information={projects} colors={colors}/>}
-                </AnimatePresence>
-            </div>
+        <div>
+            <NavBar/>
+            <About/>
+            <InfoSection title="experience" information={experiences}/>
+            <InfoSection title="education" information={educations}/>
+            <Projects/>
         </div>
     )
 }

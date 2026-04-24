@@ -16,9 +16,8 @@ function Home(){
             endDate: new Date("2026-06-30"),
             link: "https://cosiromania.com",
             details: [
-                "Designed and implemented monthly awareness campaigns on topics such as discrimination, tolerance, and youth opportunities.",
-                "Planned and organized intercultural events, engaging diverse community members.",
-                "Facilitated group activities in multicultural environments, promoting inclusion and cross-cultural dialogue."
+                "Designed and implemented monthly awareness campaigns on topics such as discrimination, solidarity, and youth opportunities.",
+                "Planned, organized and facilitated intercultural events, engaging diverse community members, promoting inclusion and cross-cultural dialogue.",
             ]
         },
         {

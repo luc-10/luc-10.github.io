@@ -12,3 +12,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.icon {
+  width: 36px !important;
+  height: 36px !important;
+}

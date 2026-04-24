@@ -8,6 +8,10 @@ function GridBg({children}){
 
     const [activeCells, setActiveCells] = useState({})
 
+    const [hoverCell, setHoverCell] = useState(null)
+
+    const [randomCells, setRandomCells] = useState({})
+
     useEffect(() => {
         const updateGrid = () => {
             if (!containerRef.current) return
@@ -38,8 +42,32 @@ function GridBg({children}){
                 delete copy[index]
                 return copy
             })
-        }, 400)
+        }, 1000)
     }
+
+    useEffect(() => {
+        if (!grid.cols || !grid.rows) return
+
+        const interval = setInterval(() => {
+            const total = grid.cols * grid.rows
+            const index = Math.floor(Math.random() * total)
+
+            setRandomCells((prev) => ({
+            ...prev,
+            [index]: true,
+            }))
+
+            setTimeout(() => {
+            setRandomCells((prev) => {
+                const copy = { ...prev }
+                delete copy[index]
+                return copy
+            })
+            }, 3500)
+        }, 100)
+
+        return () => clearInterval(interval)
+    }, [grid.cols, grid.rows])
 
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect()
@@ -52,12 +80,10 @@ function GridBg({children}){
 
         const index = row*grid.cols+col 
 
-        setCurrentCell(index)
+        setHoverCell(index)
 
         activateCell(index)
     }
-
-    const [currentCell, setCurrentCell] = useState(null)
 
     return (
         <div 
@@ -65,7 +91,7 @@ function GridBg({children}){
             className="relative min-h-screen bg-[#1e1e1e] overflow-hidden"
             onMouseMove={handleMouseMove} 
             
-            onMouseLeave={() => setCurrentCell(null)}   
+            onMouseLeave={() => setHoverCell(null)}   
         >
 
             <div className="absolute inset-0 grid pointer-events-none"
@@ -80,11 +106,13 @@ function GridBg({children}){
                     className={`
                         border border-white/5
                         transition-all duration-300
-                        ${currentCell === i 
-                            ? "bg-[#ff8500]" 
+                        ${hoverCell === i 
+                            ? "bg-[#ff8500]/50 shadow-[0_0_30px_rgba(255,133,0,0.5)]" 
                             : activeCells[i] 
-                                ? "bg-[#ff8500]/30" 
-                                : ""
+                                ? "bg-[#ff8500]/25 shadow-[0_0_20px_rgba(255,133,0,0.25)]" 
+                                : randomCells[i]
+                                    ? "bg-white/10 shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+                                    : ""
                         }
                         `}
                     />

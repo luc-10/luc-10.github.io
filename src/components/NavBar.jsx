@@ -58,7 +58,7 @@ function NavBar() {
     }, [])
 
     return (
-    <div className="bg-[#2e2e2e] flex justify-center fixed top-0 left-0 w-full z-50 shadow-md">
+    <div className="bg-[#2e2e2e] flex justify-center fixed top-0 left-0 w-full z-50 shadow-md opacity-75">
         <div ref={navRef} className="flex relative">
             {links.map(({ href, label }) => (
             <a
@@ -70,7 +70,7 @@ function NavBar() {
                     isClickScrolling.current=true
                     setActiveSection(href)
                 }}
-                className={`uppercase p-4 font-bold text-2xl duration-150
+                className={`uppercase p-4 font-bold text-2xl duration-150 
                 ${activeSection === href 
                     ? "text-[#ff8500] hover:text-[#ff9e00]" 
                     : "text-[#ff6d00] hover:text-[#ff9e00]"

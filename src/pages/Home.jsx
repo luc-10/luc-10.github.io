@@ -3,22 +3,7 @@ import NavBar from "../components/NavBar"
 import About from "../components/About"
 import InfoSection from "../components/InfoSection"
 import Projects from "../components/Projects"
-
-import { GoOriginal, GitOriginal, JavaOriginal, 
-    PythonOriginal, TypescriptOriginal, GodotOriginal, 
-    FirebaseOriginal, CsharpOriginal } from "devicons-react"
-
-
-export const techIcons = {
-    Golang: <GoOriginal />,
-    Git: <GitOriginal />,
-    Java: <JavaOriginal title="Java" />,
-    Python: <PythonOriginal title="Python" />,
-    Typescript: <TypescriptOriginal title="Typescript" />,
-    Godot: <GodotOriginal title="Godot" />,
-    Firebase: <FirebaseOriginal title="Firestore" />,
-    "C#": <CsharpOriginal title="C#" />,
-}
+import GridBg from "../components/GridBg"
 
 function Home(){
 
@@ -72,23 +57,29 @@ function Home(){
             details: [
             ]
         },
+        {
+            title: "High School diploma",
+            organization: "I.I.S Principessa Maria Pia",
+            location: "Taranto, Italy",
+            startDate: new Date("2016-09-12"),
+            endDate: new Date("2021-06-28"),
+            link: "https://www.iismariapia.it/",
+            details: [
+                "Final grade: 100 / 100"
+            ]
+        }
 
-    ]
-
-
-
-    const baseColors = [
-        
-        "#FF3366", "#FF9933", "#CCFF33", "#33FF33", "#33FFCC", "#3399FF", "#6633FF", "#FF33FF"
     ]
 
     return (
         <div>
-            <NavBar/>
-            <About/>
-            <InfoSection title="experience" information={experiences}/>
-            <InfoSection title="education" information={educations}/>
-            <Projects/>
+            <GridBg>
+                <NavBar/>
+                <About/>
+                <InfoSection title="experience" information={experiences}/>
+                <InfoSection title="education" information={educations}/>
+                <Projects/>
+            </GridBg>
         </div>
     )
 }

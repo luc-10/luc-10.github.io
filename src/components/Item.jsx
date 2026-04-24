@@ -1,6 +1,6 @@
 function Item({ info }){
     return(
-        <div className="p-4">
+        <div className="p-8">
             <div className="flex justify-between">
                 <h1 className="font-bold text-xl">{info.title}</h1>
 

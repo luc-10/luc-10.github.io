@@ -1,4 +1,6 @@
 import Card from "./Card"
+import pokerheimLogo from "../assets/pokerheimLogo.png"
+import fragilepotionsLogo from "../assets/fragilepotionsLogo.svg"
 
 function Projects(){
     const projects = [
@@ -13,7 +15,7 @@ function Projects(){
             title: "Fragile Potions",
             technologies: ["C#", "Godot", "Git"],
             link: "https://github.com/luc-10/FragileSokoban",
-            image: "",
+            image: fragilepotionsLogo,
             details: `Developed a puzzle game during "Mini Jam 200: Freedom" using Godot and C#. Implemented custom mechanics inspired by Sokoban, including group-based box movement and destructible crates, within a constrained time frame.`
         },
         {
@@ -21,7 +23,7 @@ function Projects(){
             title: "PokerHeim",
             technologies: ["Java", "Python", "libGDX", "Firebase", "Git"],
             link: "https://github.com/luc-10/Pokerheim",
-            image: "",
+            image: pokerheimLogo,
             details: "Co-developed a real-time multiplayer Texas Hold’em mobile game using Java (libGDX) for the frontend and Python with Firestore for the backend. Worked on game state synchronization, client-server communication, and testing in an Agile team environment."
         },
         {
@@ -41,9 +43,9 @@ function Projects(){
     ]
 
     return (
-        <div id="projects" className="mx-auto scroll-mt-48">
+        <div id="projects" className="section mx-auto scroll-mt-48 my-48 border-2">
             
-            <h1 className="uppercase text-4xl font-semibold w-1/2 mx-auto mb-4">Personal projects</h1>
+            <h1 className="uppercase text-4xl font-semibold w-2/3 mx-auto mb-4">Personal projects</h1>
             <div className="flex justify-center">
                 <div className="grid grid-cols-3 gap-4">
                     {projects.map((project) => (

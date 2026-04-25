@@ -56,7 +56,7 @@ function Card({ project }) {
 
             <p className="flex-grow text-sm md:text-base">{project.details}</p>
 
-            <div className="flex justify-center mt-4 bg-[#d4d4d4] rounded-xl gap-2 md:gap-4 p-2 md:p-3">
+            <div className="flex justify-center mt-4 bg-[#d4d4d4] rounded-xl gap-2 md:gap-4 p-2 md:p-3 opacity-75">
             {project.technologies.map((tech) => (
                 <TechIcon key={tech} name={tech} />
             ))}

@@ -1,6 +1,19 @@
 import { useEffect, useRef, useState } from "react"
 
 function GridBg({children}){
+
+
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768)
+        check()
+
+        window.addEventListener("resize", check)
+        return () => window.removeEventListener("resize", check)
+    }, [])
+
+
     const cellSize = 50
     const containerRef = useRef(null)
     const [grid, setGrid] = useState({ cols: 0, rows: 0 })
@@ -46,7 +59,7 @@ function GridBg({children}){
     }
 
     useEffect(() => {
-        if (!grid.cols || !grid.rows) return
+        if (!grid.cols || !grid.rows || isMobile) return
 
         const interval = setInterval(() => {
             const total = grid.cols * grid.rows

@@ -40,9 +40,9 @@ function Projects(){
     return (
         <div id="projects" className="section mx-auto scroll-mt-48 ">
             
-            <h1 className="uppercase text-2xl md:text-4xl font-semibold w-full md:w-2/3 px-4 mx-auto text-[#ff8500]">Personal projects</h1>
-            <div className="justify-center flex">
-                <div className="h-[2px] opacity-50 bg-[#ff6d00] mt-6 mb-2 md:w-2/3 w-full px-4"></div>
+            <h1 className="uppercase text-2xl md:text-4xl font-semibold w-full md:w-2/3 mx-auto px-4 md:px-0 text-[#ff8500]">Personal projects</h1>
+            <div className="justify-center flex px-4 md:px-0">
+                <div className="h-[2px] opacity-50 bg-[#ff6d00] mt-6 mb-2 md:w-2/3 w-full"></div>
             </div>
             <div className="flex justify-center p-4 md:p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -51,8 +51,8 @@ function Projects(){
                     ))}
                 </div>
             </div>
-            <div className="justify-center flex">
-                <div className="h-[2px] opacity-50 bg-[#ff6d00] w-2/3 mb-8"></div>
+            <div className="justify-center flex px-4 md:px-0">
+                <div className="h-[2px] opacity-50 bg-[#ff6d00] w-full md:w-2/3 mb-8"></div>
             </div>
         </div>
     )

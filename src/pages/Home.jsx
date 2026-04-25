@@ -71,7 +71,7 @@ function Home(){
     ]
 
     return (
-        <div>
+        <div className="">
             <GridBg>
                 <NavBar/>
                 <About/>

@@ -30,33 +30,33 @@ function Card({ project }) {
         const Icon = techIcons[name]
         if (!Icon) return null
 
-        return <Icon className="icon"/>
+        return <Icon className="icon" />
     }
 
     return (
-        <div className="group relative border-2 transition-all p-4 max-w-sm rounded-xl bg-[#1e1e1e] opacity-70 hover:opacity-90 duration-300 flex flex-col h-full overflow-hidden 
-        hover:border-[#ff9e00]">
+        <div className="group relative border-2 transition-all p-4 w-full sm:max-w-sm rounded-xl bg-[#1e1e1e] opacity-100 md:opacity-70 duration-300 flex flex-col h-full overflow-hidden 
+        hover:border-[#ff9e00] md:hover:opacity-90">
 
-            <div className="absolute top-0 right-0 w-16 h-16 bg-[#d4d4d4] rounded-bl-full flex justify-end transition-all duration-300 group-hover:bg-[#ff9e00]">
+            <div className="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-[#d4d4d4] rounded-bl-full flex justify-end transition-all duration-300 group-hover:bg-[#ff9e00]">
                 <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-4xl text-black hover:text-[#d4d4d4] transition"
+                    className="text-2xl md:text-4xl text-black hover:text-[#d4d4d4] transition"
                 >
                     <FaGithub className="mr-2 mt-2"/>
                 </a>
             </div>
 
-            <img src={project.image} className="w-2/3 p-6 mx-auto" />
+            <img src={project.image} className="w-1/2 md:w-2/3 p-4 md:p-6 mx-auto" />
 
             <div className="flex justify-between items-center mb-2">
-                <h1 className="font-bold text-xl">{project.title}</h1>
+                <h1 className="font-bold text-lg md:text-xl">{project.title}</h1>
             </div>
 
-            <p className="flex-grow">{project.details}</p>
+            <p className="flex-grow text-sm md:text-base">{project.details}</p>
 
-            <div className="flex justify-center gap-4 mt-4 bg-[#d4d4d4] rounded-xl p-2">
+            <div className="flex justify-center mt-4 bg-[#d4d4d4] rounded-xl gap-2 md:gap-4 p-2 md:p-3">
             {project.technologies.map((tech) => (
                 <TechIcon key={tech} name={tech} />
             ))}

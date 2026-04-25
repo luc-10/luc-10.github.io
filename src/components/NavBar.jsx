@@ -58,7 +58,7 @@ function NavBar() {
     }, [])
 
     return (
-    <div className="bg-[#2e2e2e] flex justify-center fixed top-0 left-0 w-full z-50 shadow-md bg-opacity-75">
+    <div className="hidden md:flex bg-[#2e2e2e] justify-center fixed top-0 left-0 w-full z-50 shadow-md bg-opacity-75">
         <div ref={navRef} className="flex relative">
             {links.map(({ href, label }) => (
             <a

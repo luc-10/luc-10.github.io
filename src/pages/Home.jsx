@@ -28,7 +28,7 @@ function Home(){
             endDate: new Date("2025-10-10"),
             link: "https://www.unitn.it/en",
             details: [
-                "Developed and improved heuristic algorithms for the Radiotherapy Scheduling Problem, modeled as a variation of the 1D Online Bin Packing Problem using Python.",
+                `Developed and improved heuristic algorithms for the "Radiotherapy Scheduling Problem", modeled as a variation of the "1D Online Bin Packing Problem" using Python.`,
                 "Evaluated algorithmic performance and solution quality through experimental analysis."
             ]
         }

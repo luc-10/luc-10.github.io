@@ -8,7 +8,8 @@ function About(){
             <div className="flex flex-col items-start">
                 <h1 className="text-8xl uppercase font-bold text-[#ff9e00]">Luca Pastore</h1>
                 <p className="my-8 text-xl">
-                    I like computers, my cat, bad movies, Rubik’s cubes, video games and my cat. I recently graduated in Computer Science, spent a semester in Norway through the Erasmus+ program, and I’m currently volunteering in Bucharest.
+                    I’m an Italian Computer Science graduate. I studied in Norway through the Erasmus+ program and I’m currently volunteering in Romania.
+                    I like my cat, programming, bad movies, Rubik’s cubes, video games and my cat.
 
                 </p>
                 <div className="h-[2px] bg-[#ff6d00] w-full opacity-50"></div>
@@ -23,7 +24,7 @@ function About(){
                             className="hover:bg-[#ff9e00] bg-[#d4d4d4] text-[#1e1e1e] text-xl font-semibold inline-flex items-center rounded-full w-full mx-2 px-4 transition-all duration-300"
                         >DOWNLOAD CV</a>
                         <a 
-                            href="" target="_black" 
+                            href="https://github.com/luc-10" target="_black" 
                             className="text-4xl hover:text-[#ff9e00] transition-all duration-300"
                         ><FaGithubSquare/></a>
                         {/*<a 

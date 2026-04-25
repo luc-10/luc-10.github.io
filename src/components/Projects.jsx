@@ -1,6 +1,8 @@
 import Card from "./Card"
 import pokerheimLogo from "../assets/pokerheimLogo.png"
-import fragilepotionsLogo from "../assets/fragilepotionsLogo.svg"
+import fragilepotionsLogo from "../assets/fragilepotionsLogo.png"
+import aocLogo from "../assets/aocLogo.png"
+import elevatorsLogo from "../assets/elevatorsLogo.png"
 
 function Projects(){
     const projects = [
@@ -8,7 +10,7 @@ function Projects(){
             title: "Distributed Elevator system",
             technologies: ["Golang", "Git"],
             link: "https://github.com/luc-10/Elevators",
-            image: "",
+            image: elevatorsLogo,
             details: "Fault-tolerant and distributed elevator system in Go using UDP peer-to-peer communication. Handled network unreliability (packet loss, congestion), node failures, and hardware faults through failure detection and automatic recovery mechanisms."
         },
         {
@@ -30,7 +32,7 @@ function Projects(){
             title: "Advent of code",
             technologies: ["Golang", "Typescript", "Git"],
             link: "https://github.com/luc-10/Advent-of-code",
-            image: "",
+            image: aocLogo,
             details: "Solved algorithmic challenges focusing on optimization and data structures (years 2024 - 2025). "
         },
     ]
@@ -50,9 +52,8 @@ function Projects(){
                 </div>
             </div>
             <div className="justify-center flex">
-                <div className="h-[2px] opacity-50 bg-[#ff6d00] w-2/3"></div>
+                <div className="h-[2px] opacity-50 bg-[#ff6d00] w-2/3 mb-8"></div>
             </div>
-            <div className="h-48"></div>
         </div>
     )
 }

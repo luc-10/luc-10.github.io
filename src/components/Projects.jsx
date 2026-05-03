@@ -11,7 +11,7 @@ function Projects(){
             technologies: ["Golang", "Git"],
             link: "https://github.com/luc-10/Elevators",
             image: elevatorsLogo,
-            details: "Fault-tolerant and distributed elevator system in Go using UDP peer-to-peer communication. Handled network unreliability (packet loss, congestion), node failures, and hardware faults through failure detection and automatic recovery mechanisms."
+            details: "Designed and implemented a fault-tolerant distributed elevator system in Go using UDP peer-to-peer communication. Handled network unreliability (packet loss, congestion), node failures, and hardware faults through failure detection and automatic recovery mechanisms."
         },
         {
             title: "Fragile Potions",

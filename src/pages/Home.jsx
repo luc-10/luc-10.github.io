@@ -43,7 +43,8 @@ function Home(){
             endDate: new Date("2025-11-17"),
             link: "https://www.unitn.it/en",
             details: [
-                "Final grade: 110 Cum Laude / 110"
+                "Final grade: 110 Cum Laude / 110",
+                "Thesis: New Heuristics for Efficient Scheduling of Radiotherapy Session"
             ]
         },
         {
@@ -56,17 +57,6 @@ function Home(){
             details: [
             ]
         },
-        {
-            title: "High School diploma",
-            organization: "I.I.S Principessa Maria Pia",
-            location: "Taranto, Italy",
-            startDate: new Date("2016-09-12"),
-            endDate: new Date("2021-06-28"),
-            link: "https://www.iismariapia.it/",
-            details: [
-                "Final grade: 100 / 100"
-            ]
-        }
 
     ]
 
